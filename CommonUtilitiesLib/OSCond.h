@@ -35,6 +35,7 @@
 #ifndef _OSCOND_H_
 #define _OSCOND_H_
 
+#include "PlatformHeader.h"
 #ifndef __Win32__
     #if __PTHREADS_MUTEXES__
         #include <pthread.h>

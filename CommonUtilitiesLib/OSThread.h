@@ -35,6 +35,7 @@
 #ifndef __OSTHREAD__
 #define __OSTHREAD__
 
+#include "../PlatformHeader.h"
 #ifndef __Win32__
 #if __PTHREADS__
 #if __solaris__ || __sgi__ || __hpux__
