@@ -11,8 +11,6 @@ TEMPLATE = lib
 CONFIG += staticlib
 DESTDIR = ../
 
-PRECOMPILED_HEADER = PlatformHeader.h
-
 INCLUDEPATH += \
     ../../../../APIStubLib \
     ../../../../RTPMetaInfoLib \

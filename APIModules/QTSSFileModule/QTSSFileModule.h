@@ -31,6 +31,7 @@
 
 */
 
+#include "PlatformHeader.h"
 #ifndef _RTPFILEMODULE_H_
 #define _RTPFILEMODULE_H_
 

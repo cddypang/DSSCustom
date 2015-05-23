@@ -34,6 +34,7 @@
 #ifndef _QTSSACCESSLOGMODULE_H_
 #define _QTSSACCESSLOGMODULE_H_
 
+#include "PlatformHeader.h"
 #include "QTSS.h"
 
 extern "C"

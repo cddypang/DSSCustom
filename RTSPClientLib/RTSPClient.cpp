@@ -1677,7 +1677,7 @@ OS_Error RTSPClient::ReceiveResponse()
                     
                     // Immediately copy the bit of the content body that we've already
                     // read off of the socket.
-					Assert(fContentRecvLen <= fContentLength)
+                    Assert(fContentRecvLen <= fContentLength);
                     ::memcpy(fRecvContentBuffer, theResponseData, fContentRecvLen);
                 }
                 else if (theKey.NumEqualIgnoreCase(sAuthenticateHeader.Ptr, sAuthenticateHeader.Len))

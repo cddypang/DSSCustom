@@ -1,5 +1,9 @@
 TEMPLATE = subdirs
 CONFIG += ordered
 
-SUBDIRS += CommonUtilitiesLib
+SUBDIRS += \
+    CommonUtilitiesLib \
+    APIStubLib \
+    QTFileLib \
+    DarwinStreamingServer
 

@@ -26,6 +26,7 @@
 #ifndef QTSS_H
 #define QTSS_H
 
+#include "PlatformHeader.h"
 #ifdef __cplusplus
 extern "C" {
 #endif

@@ -30,7 +30,7 @@
     
     
 */
-
+#include "PlatformHeader.h"
 #include <stdlib.h>
 #include "SafeStdLib.h"
 #ifndef __Win32__
