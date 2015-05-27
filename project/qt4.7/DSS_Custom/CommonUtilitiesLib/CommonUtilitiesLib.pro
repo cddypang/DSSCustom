@@ -10,6 +10,8 @@ TARGET = CommonUtilitiesLib
 TEMPLATE = lib
 CONFIG += staticlib
 DESTDIR = ../
+PRECOMPILED_HEADER = ../../../../PlatformHeader.h
+
 
 INCLUDEPATH += \
     ../../../../APIStubLib \
@@ -57,7 +59,6 @@ SOURCES += \
     ../../../../CommonUtilitiesLib/md5digest.cpp \
     ../../../../CommonUtilitiesLib/IdleTask.cpp \
     ../../../../CommonUtilitiesLib/EventContext.cpp \
-    ../../../../CommonUtilitiesLib/ev.cpp \
     ../../../../CommonUtilitiesLib/DateTranslator.cpp
 
 
@@ -109,10 +110,8 @@ HEADERS += \
     ../../../../CommonUtilitiesLib/GetWord.h \
     ../../../../CommonUtilitiesLib/FastCopyMacros.h \
     ../../../../CommonUtilitiesLib/EventContext.h \
-    ../../../../CommonUtilitiesLib/ev.h \
     ../../../../CommonUtilitiesLib/DssStopwatch.h \
     ../../../../CommonUtilitiesLib/DateTranslator.h \
-    ../../../../CommonUtilitiesLib/daemon.h \
     ../../../../CommonUtilitiesLib/ConfParser.h \
     ../../../../CommonUtilitiesLib/base64.h \
     ../../../../CommonUtilitiesLib/atomic.h

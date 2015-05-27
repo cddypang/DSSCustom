@@ -213,7 +213,7 @@ private:
     static UInt32           sNumShortTaskThreads;
     static UInt32           sNumBlockingTaskThreads;
     
-    static OSMutexRW        sMutexRW __attribute__((visibility("hidden")));
+    static OSMutexRW        sMutexRW; // __attribute__((visibility("hidden"))); //win32 don't support
     
     friend class Task;
     friend class TaskThread;

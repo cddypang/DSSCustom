@@ -28,6 +28,7 @@
 #define ASSERT 1
 #define MEMORY_DEBUGGING  0 //enable this to turn on really fancy debugging of memory leaks, etc...
 #define QTFILE_MEMORY_DEBUGGING 0
+#define __Win32__ 1
 
 #if __MacOSX__
     #define PLATFORM_SERVER_BIN_NAME "QuickTimeStreamingServer"
@@ -97,6 +98,8 @@
 #ifndef USE_DEFAULT_STD_LIB
     #define USE_DEFAULT_STD_LIB 1
 #endif
+
+#undef UNICODE
 
 #elif __linux__ 
 

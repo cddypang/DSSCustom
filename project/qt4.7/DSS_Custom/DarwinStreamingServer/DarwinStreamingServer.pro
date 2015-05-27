@@ -1,7 +1,8 @@
 TEMPLATE = app
 CONFIG += console
 CONFIG -= qt
-DESTDIR = .
+DESTDIR = ../
+TARGET  = DSServer
 
 PRECOMPILED_HEADER = ../../../../PlatformHeader.h
 
@@ -38,9 +39,7 @@ INCLUDEPATH += \
 
 
 SOURCES += \
-    ../../../../CommonUtilitiesLib/daemon.c \
     ../../../../Server.tproj/GenerateXMLPrefs.cpp \
-    ../../../../Server.tproj/main.cpp \
     ../../../../Server.tproj/QTSSCallbacks.cpp \
     ../../../../Server.tproj/QTSSDataConverter.cpp \
     ../../../../Server.tproj/QTSSDictionary.cpp \
@@ -122,7 +121,8 @@ SOURCES += \
     ../../../../APIModules/QTSSRTPFileModule/RTPFileSession.cpp \
     ../../../../APIModules/QTSSAccessModule/QTSSAccessModule.cpp \
     ../../../../APIModules/QTSSHttpFileModule/QTSSHttpFileModule.cpp \
-    ../../../../APIModules/QTSSAccessModule/AccessChecker.cpp
+    ../../../../APIModules/QTSSAccessModule/AccessChecker.cpp \
+    ../../../../Server.tproj/win32main.cpp
 
 LIBS += -lcrypt -lpthread -L../ -lQTFileLib -lCommonUtilitiesLib
 

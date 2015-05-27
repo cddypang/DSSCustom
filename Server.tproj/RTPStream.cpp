@@ -34,7 +34,9 @@
 
 
 #include <stdlib.h>
-#include <arpa/inet.h>
+#ifndef __Win32__
+  #include <arpa/inet.h>
+#endif
 #include "SafeStdLib.h"
 #include "RTPStream.h"
 #include "RTPSessionInterface.h"
@@ -771,13 +773,13 @@ void RTPStream::UDPMonitorWrite(void* thePacketData, UInt32 inLen,  Bool16 isRTC
     sin.sin_addr.s_addr = htonl(fMonitorAddr);
     
     if (fPayloadType == qtssVideoPayloadType)
-        sin.sin_port = (in_port_t) htons(fMonitorVideoDestPort+RTCPportOffset);
+        sin.sin_port = (USHORT) htons(fMonitorVideoDestPort+RTCPportOffset);
     else if (fPayloadType == qtssAudioPayloadType)
-        sin.sin_port = (in_port_t) htons(fMonitorAudioDestPort+RTCPportOffset);
+        sin.sin_port = (USHORT) htons(fMonitorAudioDestPort+RTCPportOffset);
     
     if (sin.sin_port != 0)
     {
-        ssize_t result = ::sendto(fMonitorSocket, thePacketData, inLen, 0, (struct sockaddr *)&sin, sizeof(struct sockaddr));
+        ssize_t result = ::sendto(fMonitorSocket, (const char*)thePacketData, inLen, 0, (struct sockaddr *)&sin, sizeof(struct sockaddr));
        if (DEBUG)
         {   if (result < 0)
                 qtss_printf("RTCP Monitor Socket sendto failed\n");

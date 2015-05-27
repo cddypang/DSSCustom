@@ -25,6 +25,7 @@
 
 #ifndef OSHeaders_H
 #define OSHeaders_H
+#include "PlatformHeader.h"
 #include <limits.h>
 
 
@@ -213,8 +214,8 @@
     #define crypt(buf, salt) ((char*)buf)
     
     /* Includes */
-    #include <windows.h>
     #include <winsock2.h>
+    #include <windows.h>
     #include <mswsock.h>
     #include <process.h>
     #include <ws2tcpip.h>
@@ -244,6 +245,7 @@
     #define QT_PATH_SEPARATOR       '/'
 
     /* Typedefs */
+    typedef signed long         ssize_t;
     typedef signed long         PointerSizedInt;
     typedef unsigned long       PointerSizedUInt;
     typedef unsigned char       UInt8;

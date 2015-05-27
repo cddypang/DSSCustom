@@ -45,13 +45,19 @@
 #include "OSArrayObjectDeleter.h"
 
 
-#include <grp.h>
+
 #ifdef __MacOSX__
 #include <membership.h>
 #endif
-#include <pwd.h>
+
 #include <signal.h>
+
+
+#ifndef __Win32__
+#include <grp.h>
+#include <pwd.h>
 #include <unistd.h>
+#endif
      
 #define DEBUG_QTACCESS 0
 #define debug_printf if (DEBUG_QTACCESS) qtss_printf
