@@ -4,6 +4,9 @@ CONFIG -= qt
 DESTDIR = ../
 TARGET  = DSServer
 
+QMAKE_CXXFLAGS = -stdlib=libstdc++
+#QMAKE_CXXFLAGS_WARN_ON += -Wdefault-arg-special-member
+
 PRECOMPILED_HEADER = ../../../../PlatformHeader.h
 
 INCLUDEPATH += \
@@ -27,6 +30,7 @@ INCLUDEPATH += \
     ../../../../APIModules/QTSSRTPFileModule \
     ../../../../APIModules/QTSSAccessModule \
     ../../../../APIModules/QTSSHttpFileModule \
+    ../../../../APIModules/QTSSDSAuthModule \
     ../../../../QTFileTools/RTPFileGen.tproj \
     ../../../../APIStubLib \
     ../../../../CommonUtilitiesLib \
@@ -121,8 +125,14 @@ SOURCES += \
     ../../../../APIModules/QTSSRTPFileModule/RTPFileSession.cpp \
     ../../../../APIModules/QTSSAccessModule/QTSSAccessModule.cpp \
     ../../../../APIModules/QTSSHttpFileModule/QTSSHttpFileModule.cpp \
-    ../../../../APIModules/QTSSAccessModule/AccessChecker.cpp \
-    ../../../../Server.tproj/win32main.cpp
+    ../../../../APIModules/QTSSAccessModule/AccessChecker.cpp
 
-LIBS += -lcrypt -lpthread -L../ -lQTFileLib -lCommonUtilitiesLib
+win32 {
+    SOURCES += ../../../../Server.tproj/win32main.cpp
+}
+unix {
+    SOURCES += ../../../../Server.tproj/main.cpp
+}
+
+LIBS += -lcrypto -lpthread -L../ -lQTFileLib -lCommonUtilitiesLib
 

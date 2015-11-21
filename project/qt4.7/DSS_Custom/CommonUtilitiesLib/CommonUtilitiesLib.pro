@@ -12,6 +12,8 @@ CONFIG += staticlib
 DESTDIR = ../
 PRECOMPILED_HEADER = ../../../../PlatformHeader.h
 
+QMAKE_CXXFLAGS = -stdlib=libstdc++
+
 
 INCLUDEPATH += \
     ../../../../APIStubLib \

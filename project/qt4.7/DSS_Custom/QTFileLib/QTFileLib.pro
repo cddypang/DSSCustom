@@ -11,6 +11,8 @@ TEMPLATE = lib
 CONFIG += staticlib
 DESTDIR = ../
 
+QMAKE_CXXFLAGS = -stdlib=libstdc++
+
 PRECOMPILED_HEADER = ../../../../PlatformHeader.h
 
 INCLUDEPATH += \

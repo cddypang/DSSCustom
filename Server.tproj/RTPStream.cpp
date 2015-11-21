@@ -773,9 +773,9 @@ void RTPStream::UDPMonitorWrite(void* thePacketData, UInt32 inLen,  Bool16 isRTC
     sin.sin_addr.s_addr = htonl(fMonitorAddr);
     
     if (fPayloadType == qtssVideoPayloadType)
-        sin.sin_port = (USHORT) htons(fMonitorVideoDestPort+RTCPportOffset);
+        sin.sin_port = (unsigned short) htons(fMonitorVideoDestPort+RTCPportOffset);
     else if (fPayloadType == qtssAudioPayloadType)
-        sin.sin_port = (USHORT) htons(fMonitorAudioDestPort+RTCPportOffset);
+        sin.sin_port = (unsigned short) htons(fMonitorAudioDestPort+RTCPportOffset);
     
     if (sin.sin_port != 0)
     {
