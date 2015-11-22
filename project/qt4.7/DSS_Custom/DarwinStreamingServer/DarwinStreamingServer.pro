@@ -30,7 +30,8 @@ INCLUDEPATH += \
     ../../../../APIModules/QTSSRTPFileModule \
     ../../../../APIModules/QTSSAccessModule \
     ../../../../APIModules/QTSSHttpFileModule \
-    ../../../../APIModules/QTSSDSAuthModule \
+#    ../../../../APIModules/QTSSDSAuthModule \
+#    ../../../../APIModules/QTSSDSAuthModule/DSWrappers \
     ../../../../QTFileTools/RTPFileGen.tproj \
     ../../../../APIStubLib \
     ../../../../CommonUtilitiesLib \
@@ -126,12 +127,22 @@ SOURCES += \
     ../../../../APIModules/QTSSAccessModule/QTSSAccessModule.cpp \
     ../../../../APIModules/QTSSHttpFileModule/QTSSHttpFileModule.cpp \
     ../../../../APIModules/QTSSAccessModule/AccessChecker.cpp
+#    ../../../../APIModules/QTSSDSAuthModule/QTSSDSAuthModule.cpp \
+#    ../../../../APIModules/QTSSDSAuthModule/DSAccessChecker.cpp \
+#    ../../../../APIModules/QTSSDSAuthModule/DSWrappers/DSBuffer.cpp \
+#    ../../../../APIModules/QTSSDSAuthModule/DSWrappers/CDirService.cpp
 
 win32 {
     SOURCES += ../../../../Server.tproj/win32main.cpp
 }
 unix {
     SOURCES += ../../../../Server.tproj/main.cpp
+
+    QMAKE_LFLAGS += -F /System/Library/Frameworks/Security.framework/
+    LIBS += -framework Security
+
+    QMAKE_LFLAGS += -F /System/Library/Frameworks/CoreFoundation.framework/
+    LIBS += -framework CoreFoundation
 }
 
 LIBS += -lcrypto -lpthread -L../ -lQTFileLib -lCommonUtilitiesLib
